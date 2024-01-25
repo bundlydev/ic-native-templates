@@ -1,5 +1,3 @@
-// @ts-ignore
-import { APP_LINK, IC_HOST_URL, INTERNET_IDENTITY_URL } from "@env";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 
@@ -10,17 +8,19 @@ import { InternetIdentityReactNative, ReactNativeStorage } from "@bundly/ic-reac
 import { AuthButton } from "./components/auth-button";
 import { AppBrowser } from "./libs/InAppBrowser";
 
+const { EXPO_PUBLIC_INTERNET_IDENTITY_URL, EXPO_PUBLIC_APP_LINK, EXPO_PUBLIC_IC_HOST_URL } = process.env;
+
 export default function App() {
   const client = Client.create({
     agent: {
-      host: IC_HOST_URL,
+      host: EXPO_PUBLIC_IC_HOST_URL,
       verifyQuerySignatures: false,
     },
     canisters: {},
     providers: [
       new InternetIdentityReactNative({
-        providerUrl: INTERNET_IDENTITY_URL,
-        appLink: APP_LINK,
+        providerUrl: EXPO_PUBLIC_INTERNET_IDENTITY_URL!,
+        appLink: EXPO_PUBLIC_APP_LINK!,
         inAppBrowser: AppBrowser,
       }),
     ],
