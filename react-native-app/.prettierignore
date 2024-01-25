@@ -1,0 +1,14 @@
+# Node Modules
+node_modules
+**/**/node_modules
+
+# Logs
+*.lock
+*.log
+
+# Git
+.gitignore
+.prettierignore
+
+# Internet Computer
+src/declarations
