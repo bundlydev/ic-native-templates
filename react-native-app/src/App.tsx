@@ -1,3 +1,5 @@
+// @ts-ignore
+import { APP_LINK, IC_HOST_URL, INTERNET_IDENTITY_URL } from "@env";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 
@@ -11,14 +13,14 @@ import { AppBrowser } from "./libs/InAppBrowser";
 export default function App() {
   const client = Client.create({
     agent: {
-      host: "https://beige-bushes-spend.loca.lt/",
+      host: IC_HOST_URL,
       verifyQuerySignatures: false,
     },
     canisters: {},
     providers: [
       new InternetIdentityReactNative({
-        providerUrl: "https://beige-bushes-spend.loca.lt/?canisterId=bd3sg-teaaa-aaaaa-qaaba-cai",
-        appLink: "exp://127.0.0.1:8081/--/", //TODO: Get this dynamically
+        providerUrl: INTERNET_IDENTITY_URL,
+        appLink: APP_LINK,
         inAppBrowser: AppBrowser,
       }),
     ],
