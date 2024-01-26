@@ -9,8 +9,8 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@bundly/ic-core-js": "^0.3.1",
-    "@bundly/ic-react": "^0.3.1",
+    "@bundly/ic-core-js": "^0.4.0",
+    "@bundly/ic-react": "^0.4.0",
     "@bundly/ic-react-native": "^0.3.0",
     "expo": "~50.0.3",
     "expo-constants": "~15.4.5",
