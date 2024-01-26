@@ -6,7 +6,6 @@ import { AppLinkParams } from "@bundly/ic-core-js";
 import { useCurrentProvider } from "@bundly/ic-react";
 
 export default function SuccessPage() {
-  const [principal, setPrincipal] = React.useState<string>();
   const provider = useCurrentProvider();
 
   const params = useLocalSearchParams<AppLinkParams>();
@@ -26,14 +25,9 @@ export default function SuccessPage() {
       if (delegation && publicKey) {
         try {
           await provider.onAppLinkOpened({ delegation, publicKey });
-          const principal = provider.getIdentity().getPrincipal().toString();
-
-          setPrincipal(principal);
         } catch (error) {
           console.error(error);
         }
-
-        // router.replace("/home");
       } else {
         console.warn("Invalid App Link Params");
       }
@@ -45,8 +39,6 @@ export default function SuccessPage() {
   return (
     <View>
       <Text>Success page</Text>
-
-      <Text>Your principal is: {principal}</Text>
 
       <Link replace href="/">
         <Text>Go Home</Text>

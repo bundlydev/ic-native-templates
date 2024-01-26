@@ -4,7 +4,7 @@ import { Client } from "@bundly/ic-core-js";
 import { IcpConnectContextProvider } from "@bundly/ic-react";
 import { InternetIdentityReactNative, ReactNativeStorage } from "@bundly/ic-react-native";
 
-import { AppBrowser } from "./libs/InAppBrowser";
+import { AppBrowser } from "./libs/in-app-browser";
 
 const { EXPO_PUBLIC_INTERNET_IDENTITY_URL, EXPO_PUBLIC_APP_LINK, EXPO_PUBLIC_IC_HOST_URL } = process.env;
 
