@@ -6,12 +6,13 @@
     "start": "expo start --clear",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "clean": ""
   },
   "dependencies": {
-    "@bundly/ic-core-js": "^0.4.0",
-    "@bundly/ic-react": "^0.4.0",
-    "@bundly/ic-react-native": "^0.4.0",
+    "@bundly/ic-core-js": "^0.4.1",
+    "@bundly/ic-react": "^0.4.1",
+    "@bundly/ic-react-native": "^0.4.1",
     "expo": "~50.0.3",
     "expo-constants": "~15.4.5",
     "expo-device": "^5.9.3",
