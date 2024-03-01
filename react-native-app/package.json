@@ -10,9 +10,9 @@
     "clean": ""
   },
   "dependencies": {
-    "@bundly/ic-core-js": "^0.4.1",
-    "@bundly/ic-react": "^0.4.1",
-    "@bundly/ic-react-native": "^0.4.1",
+    "@bundly/ares-core": "^0.1.0-rc.0",
+    "@bundly/ares-react": "^0.1.0-rc.1",
+    "@bundly/ares-react-native": "^0.1.0-rc.0",
     "expo": "~50.0.3",
     "expo-constants": "~15.4.5",
     "expo-device": "^5.9.3",
