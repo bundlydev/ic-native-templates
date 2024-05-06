@@ -6,12 +6,13 @@ import { InternetIdentityReactNative, ReactNativeStorage } from "@bundly/ares-re
 
 import { AppBrowser } from "./libs/in-app-browser";
 
-const { EXPO_PUBLIC_INTERNET_IDENTITY_MIDDLEWARE_URL, EXPO_PUBLIC_APP_LINK, EXPO_PUBLIC_IC_HOST_URL } = process.env;
+const { EXPO_PUBLIC_INTERNET_IDENTITY_MIDDLEWARE_URL, EXPO_PUBLIC_APP_LINK, EXPO_PUBLIC_IC_HOST } =
+  process.env;
 
 export default function App() {
   const client = Client.create({
     agent: {
-      host: EXPO_PUBLIC_IC_HOST_URL,
+      host: EXPO_PUBLIC_IC_HOST,
       verifyQuerySignatures: false,
     },
     canisters: {},
