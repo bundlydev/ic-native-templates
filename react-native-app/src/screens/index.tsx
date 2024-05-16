@@ -1,17 +1,19 @@
-import { Button, Alert } from "react-native";
+import { Alert, Button } from "react-native";
 
 import { useAuth } from "@bundly/ares-react";
-import { AuthButton } from "@bundly/ares-react-native";
+import { InternetIdentityMidlewareButton, LogoutButton } from "@bundly/ares-react-native";
 
 export default function IndexScreen() {
-  const { identity } = useAuth();
+  const { isAuthenticated, currentIdentity } = useAuth();
 
   const handlePress = () => {
-    Alert.alert("Principal", identity.getPrincipal().toString());
-  }
+    Alert.alert("Principal", currentIdentity.getPrincipal().toString());
+  };
 
-  return <>
-    <AuthButton />
-    <Button title="Get principal" onPress={handlePress} />
-    </>;
+  return (
+    <>
+      {isAuthenticated ? <LogoutButton identity={currentIdentity} /> : <InternetIdentityMidlewareButton />}
+      <Button title="Get principal" onPress={handlePress} />
+    </>
+  );
 }

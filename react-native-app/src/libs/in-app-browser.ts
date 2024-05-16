@@ -1,9 +1,9 @@
 import * as Device from "expo-device";
 import * as WebBrowser from "expo-web-browser";
 
-import { InAppBrowser } from "@bundly/ic-react-native";
+import { AppBrowser } from "@bundly/ares-react-native";
 
-export const AppBrowser: InAppBrowser = {
+export const Browser: AppBrowser = {
   open: (url: string) => {
     WebBrowser.openBrowserAsync(url, { showTitle: false });
   },
